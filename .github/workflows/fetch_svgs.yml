@@ -1,0 +1,11 @@
+name: Fetch SVGs from Figma
+on:
+  repository_dispatch:
+    types: [icons_updated]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+        - uses: actions/checkout@v4
