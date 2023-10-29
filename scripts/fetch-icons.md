@@ -1,6 +1,6 @@
 # Fetch Icons
 
-> **Note** The codeblocks in this document are executed by `npm run fetch-icons`.
+> **Note**: The codeblock in this document is executed by `npm run fetch-icons`.
 
 ## Fetch icons from Figma
 
@@ -14,8 +14,8 @@ For this process to work the FIGMA_TOKEN must be set in GitHub secrets.
 # Remove all the previous icons so any icon that was removed from Figma does not remain in the repository.
 rm -rf icons
 
-# Export the FIGMA_TOKEN Github secret or FIGMA_TOKEN set in .env file for local development.
-export $(FIGMA_TOKEN | xargs || egrep -v '^#' .env | xargs)
+# Export the FIGMA_TOKEN Github secret set in the workflow env or FIGMA_TOKEN set in .env file for local development.
+export $($FIGMA_TOKEN | xargs || egrep -v '^#' .env | xargs)
 
 # This command requires a FIGMA_TOKEN to be set in GitHub secrets.
 npx figma-export use-config
