@@ -14,7 +14,7 @@ Commits to this repository are done automatically via GitHub Actions workflow wh
 
 The whole workflow chain requires having/maintaining PATs:
 
-- Figma PAT (no expiry). Is used in AWS Lambda and _fetch_svgs.yml_ workflow as secret.
+- Figma PAT (no expiry) with admin access to Moon team on Figma. Is used in AWS Lambda and _fetch_svgs.yml_ workflow as secret.
 - GitHub YOLO organisation PAT scoped to MDS icons repositories (name: "MDS icons automation". Requires yearly regeneration). Is used in AWS Lambda as secret. Good candidate in future to have automated token rotation set up.
 
 ## Reference architecture diagram
