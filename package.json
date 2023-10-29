@@ -7,9 +7,9 @@
     "fetch-icons": "npx zx ./scripts/fetch-icons.md"
   },
   "devDependencies": {
-    "@figma-export/cli": "^4.7.0",
-    "@figma-export/core": "^4.7.0",
-    "@figma-export/output-components-as-svg": "^4.7.0",
+    "@figma-export/cli": "^4.6.0",
+    "@figma-export/core": "^4.6.0",
+    "@figma-export/output-components-as-svg": "^4.6.0",
     "auto": "^10.37.6",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6",
