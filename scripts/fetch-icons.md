@@ -14,8 +14,8 @@ For this process to work the FIGMA_TOKEN must be set in GitHub secrets.
 # Remove all the previous icons so any icon that was removed from Figma does not remain in the repository.
 rm -rf icons
 
-# Export the FIGMA_TOKEN Github secret.
-export $(process.env.FIGMA_TOKEN)
+# Export the FIGMA_TOKEN Github secret or FIGMA_TOKEN set in .env file for local development.
+export $(process.env.FIGMA_TOKEN | xargs || egrep -v '^#' .env | xargs)
 
 # This command requires a FIGMA_TOKEN to be set in GitHub secrets.
 npx figma-export use-config
