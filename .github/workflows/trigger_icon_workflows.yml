@@ -1,0 +1,22 @@
+name: Trigger icon workflows
+
+on:
+  push:
+    branches:
+      - main
+
+jobs: 
+  trigger_icon_workflows:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger MDS Flutter icon font creation workflow
+        # Pin to a specific commit hash to avoid potential security issues as this GH Action is not a popular one
+        uses: convictional/trigger-workflow-and-wait@f69fa9eedd3c62a599220f4d5745230e237904be
+        with:
+          owner: coingaming
+          repo: moon_flutter_icons
+          workflow_file_name: create_icon_font.yml
+          github_token: ${{ secrets.AUTOMATION_PAT }}
+          propagate_failure: false
+          wait_workflow: false
