@@ -3,7 +3,7 @@ module.exports = {
     [
       "components",
       {
-        fileId: "Mq0ul9vM8Kc5FroxM8lxCU",
+        fileId: "RDNl9dNTMw2y0LO7K3veak",
         onlyFromPages: ["    ↪️  Dev-MDSMainIconSet"],
         outputters: [
           require("@figma-export/output-components-as-svg")({
