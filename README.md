@@ -6,7 +6,7 @@ Base repository for Moon Design System SVG icons. The aim of this repository is 
 
 Commits to this repository are done automatically via GitHub Actions workflow which gets activated by the following sequence of events:
 
-1) When designers publish a new icon in the Figma icons file, a Figma webhook triggers from the Figma PUBLISH_LIBRARY event.
+1) When designers publish a new icon in the Figma icons file, a Figma webhook triggers from the Figma LIBRARY_PUBLISH event.
 2) The webhook then triggers an AWS Lambda on MDS AWS sub-account.
 3) Lambda triggers GH Actions workflow by hitting https://api.github.com/repos/coingaming/moon-icons-base/dispatches endpoint with the _icons_updated_ keyword.
 
