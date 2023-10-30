@@ -6,6 +6,11 @@ on:
     types:
       - completed
 
+# So only the latest run is executed. Used to avoid concurrency issues as Figma webhook can be spammy at times.
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
 jobs: 
   trigger_icon_workflows:
     runs-on: ubuntu-latest

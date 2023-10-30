@@ -4,6 +4,11 @@ on:
   repository_dispatch:
     types: [icons_updated]
 
+# So only the latest run is executed. Used to avoid concurrency issues as Figma webhook can be spammy at times.
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
 jobs:
   fetch_icons:
     runs-on: ubuntu-latest
