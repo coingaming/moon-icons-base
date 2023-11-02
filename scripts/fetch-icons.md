@@ -8,13 +8,14 @@ We use the [figma-export cli](https://github.com/marcomontalbano/figma-export) t
 SVG files directly from Figma. The configuration for this process is located in
 `.figmaexportrc.js`.
 
-For this process to work the FIGMA_TOKEN must be set in GitHub secrets.
+For this process to work the FIGMA_TOKEN must be set in GitHub secrets or for local development
+use .env file with FIGMA_TOKEN set.
 
 ```sh
 # Remove all the previous icons so any icon that was removed from Figma does not remain in the repository.
 rm -rf icons
 
-# By default uses FIGMA_TOKEN GitHub secret set in the workflow env. For local development export FIGMA_TOKEN set in .env file.
+# For local development export FIGMA_TOKEN set in .env file.
 export $(egrep -v '^#' .env | xargs)
 
 # This command requires a FIGMA_TOKEN to be set in GitHub secrets.
