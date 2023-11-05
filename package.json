@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "description": "Base repository for Moon Design System SVG icons.",
   "scripts": {
-    "fetch-icons": "./scripts/fetch-icons.md"
+    "fetch-icons": "./scripts/fetch-icons.sh"
   },
   "devDependencies": {
     "@figma-export/cli": "^4.7.0",
