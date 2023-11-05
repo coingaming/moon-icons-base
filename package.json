@@ -4,11 +4,10 @@
   "version": "0.0.1",
   "description": "Base repository for Moon Design System SVG icons.",
   "scripts": {
-    "fetch-icons": "npx zx ./scripts/fetch-icons.md"
+    "fetch-icons": "./scripts/fetch-icons.md"
   },
   "devDependencies": {
     "@figma-export/cli": "^4.7.0",
-    "@figma-export/output-components-as-svg": "^4.7.0",
-    "zx": "^7.2.3"
+    "@figma-export/output-components-as-svg": "^4.7.0"
   }
 }

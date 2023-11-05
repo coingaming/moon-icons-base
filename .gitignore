@@ -31,6 +31,3 @@
 # System Files
 .DS_Store
 Thumbs.db
-
-# Ignore temporary script files
-scripts/*.md.mjs
