@@ -1,6 +1,6 @@
 # Moon Design System icons base repository
 
-Base repository for Moon Design System SVG icons. The aim of this repository is to always be in sync with the current state of the MDS icons Figma [file](https://www.figma.com/file/RDNl9dNTMw2y0LO7K3veak/Dev---Master-Icons-%26-Assets?type=design&node-id=4793-543&mode=design&t=DNuC1ymtgi1g2j23-0). Thus this repository has no versioning nor does it do any post-processing on the icons. Commits to this repository should activate further workflows in MDS technology specific (React, Elixir, Flutter) repositories.
+Base repository for Moon Design System SVG icons. The aim of this repository is to always be in sync with the current state of the MDS icons Figma [file](https://www.figma.com/file/RDNl9dNTMw2y0LO7K3veak/moon-dev-icon-set?type=design&node-id=4793-543&mode=design&t=UvJQgyCNfpQB9Eft-0). Thus this repository has no versioning nor does it do any post-processing on the icons. Commits to this repository should activate further workflows in MDS technology specific (React, Elixir, Flutter) repositories.
 
 ## How is this repository updated
 
@@ -14,8 +14,9 @@ Commits to this repository are done automatically via GitHub Actions workflow wh
 
 The whole workflow chain requires having/maintaining PATs:
 
-- Figma PAT (no expiry) with admin access to Moon team on Figma. Is used in AWS Lambda and _fetch_svgs.yml_ workflow as secret.
-- GitHub YOLO organisation PAT scoped to MDS icons repositories (name: "MDS icons automation". Requires yearly regeneration). Is used in AWS Lambda as secret. Good candidate in future to have automated token rotation set up.
+- Figma PAT - (no expiry) with admin access to Moon team on Figma. Is used in AWS Lambda and _fetch_svgs.yml_ workflow as secret.
+- GitHub YOLO organisation PAT scoped to this repository (name: "MDS automation". Requires yearly regeneration). Is used in AWS Lambda as secret mainly or for local development, set in .env file. Good candidate in future to have automated token rotation set up.
+- MOON_GH_TOKEN - YOLO GitHub organisation secret scoped to all MDS icons and token repositories (should be available by default to relevant repositories).
 
 ## Reference architecture diagram
 
