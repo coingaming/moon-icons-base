@@ -19,6 +19,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v4
+
+      - name: Get commit message header
+        id: get_commit_message
+        run: |
+          COMMIT_MESSAGE_HEADER=$(git log -1 --pretty=%B | head -n 1)
+          echo "COMMIT_MESSAGE_HEADER=${COMMIT_MESSAGE_HEADER}" >> $GITHUB_ENV
+          
       - name: Trigger MDS Flutter icon font creation workflow
         # Pin to a specific commit hash to avoid potential security issues as this GH Action is not a popular one
         uses: convictional/trigger-workflow-and-wait@f69fa9eedd3c62a599220f4d5745230e237904be
@@ -27,6 +35,6 @@ jobs:
           repo: moon_flutter_icons
           workflow_file_name: create_icon_font.yml
           github_token: ${{ secrets.MOON_GH_TOKEN }}
-          client_payload: '{"inputs": {"description": "${{ github.event.workflow_run.head_commit.message }}"}}'
+          client_payload: '{"description": "$COMMIT_MESSAGE_HEADER"}'
           propagate_failure: false
           wait_workflow: false
