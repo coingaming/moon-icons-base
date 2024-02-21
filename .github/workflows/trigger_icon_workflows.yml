@@ -35,6 +35,6 @@ jobs:
           repo: moon_flutter_icons
           workflow_file_name: create_icon_font.yml
           github_token: ${{ secrets.MOON_GH_TOKEN }}
-          client_payload: '{"description": "$COMMIT_MESSAGE_HEADER"}'
+          client_payload: '{"description": "${{ env.COMMIT_MESSAGE_HEADER }}"}'
           propagate_failure: false
           wait_workflow: false
